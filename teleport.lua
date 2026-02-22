@@ -1,17 +1,16 @@
-local url = "https://raw.githubusercontent.com/justahub291/monscript.lua/refs/heads/main/teleport.lua"
+-- Script complet à copier-coller directement
+local TeleportService = game:GetService("TeleportService")
+local placeId = 109983668079237 
+local jobId = "2a04c7a7-709a-4261-83c9-f69272bdcdcf"
 
-local success, response = pcall(function()
-    return game:HttpGet(url)
-end)
-
-if success and response then
-    local func, err = loadstring(response)
-    if func then
-        func()
-        print("Script exécuté avec succès !")
-    else
-        warn("Erreur lors du chargement (loadstring) : " .. tostring(err))
+local function rejoindreServeur()
+    local success, result = pcall(function()
+        TeleportService:TeleportToPlaceInstance(placeId, jobId, game.Players.LocalPlayer)
+    end)
+    
+    if not success then
+        warn("Erreur lors de la téléportation : " .. tostring(result))
     end
-else
-    warn("Impossible de télécharger le script via HttpGet. Vérifie l'URL.")
 end
+
+rejoindreServeur()

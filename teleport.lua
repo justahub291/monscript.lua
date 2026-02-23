@@ -1,7 +1,7 @@
--- Script complet à copier-coller directement dans Delta
+-- Script mis à jour avec le JobId actuel
 local TeleportService = game:GetService("TeleportService")
 local placeId = 109983668079237 
-local jobId = "acfac657-54d0-4d57-81f4-82b68bd06c56"
+local jobId = "fbd7aba1-8618-4eed-83e7-5fac83175ddd"
 
 local function rejoindreServeur()
     local success, result = pcall(function()
